@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container } from "@mui/material";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Views/Home/Home";
+import Patients from "./Views/Patients/Patients";
+import PatientDetails from "./Views/Patients/PatientDetails/PatientDetails";
+import PatientEncounter from "./Views/Patients/PatientEncounter/PatientEncounter";
+import Calendar from "./Views/Calendar/Calendar";
+import MasterLayout from "./MasterLayout/MasterLayout";
 
-function App() {
+const App = () => {
+  const user = JSON.parse(localStorage.getItem("profile"));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/patients" exact element={<Patients />} />
+        <Route path="/patients/:id" exact element={<PatientDetails />} />
+        <Route
+          path="/patient/:id/encounter"
+          exact
+          element={<PatientEncounter />}
+        />
+        <Route path="/calendar" exact element={<Calendar />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
