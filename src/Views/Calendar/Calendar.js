@@ -11,7 +11,7 @@ const Calendar = () => {
     <>
       <Navbar />
       <Grid container className={classes.mainContainer}>
-        <Grid md={3}>
+        <Grid md={2}>
           <Sidebar />
         </Grid>
         <Grid md={9}>calendar</Grid>

@@ -1,12 +1,16 @@
-import { Button, Divider, Grid, Typography } from "@mui/material";
+import { ImagesearchRoller } from "@mui/icons-material";
+import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
+import SearchItem from "../../../Components/patientInfo/patientInfo";
+import useStyles from "./styles";
 
 const PatientDetails = () => {
   const location = useLocation();
   const patient = location.state;
   const navigate = useNavigate();
+  const classes = useStyles();
 
   console.log(location);
 
@@ -29,35 +33,21 @@ const PatientDetails = () => {
           Patient's Details
         </Typography>
       </Grid>
-      <Typography sx={{ fontWeight: "bold" }} variant="subtitle1" gutterBottom>
-        Patient Information
-      </Typography>
       <Divider />
-      <Grid container md={6}>
-        <Typography variant="body2">
-          Full Name:
-          {patient ? `${patient.firstName} ${patient.lastName}` : "N/A"}
-        </Typography>
-      </Grid>
-      <Grid container md={6}>
-        <Typography variant="body2">
-          First Name: {patient.firstName ? patient.firstName : "N/A"}
-        </Typography>
-      </Grid>
-      <Grid container md={6}>
-        <Typography variant="body2">
-          Second Name: {patient.lastName ? patient.lastName : "N/A"}
-        </Typography>
-      </Grid>
-      <Grid container md={6}>
-        <Typography variant="body2">
-          Age: {patient.age ? patient.age : "N/A"}
-        </Typography>
-      </Grid>
-      <Grid container md={6}>
-        <Typography variant="body2">
-          Gender: {patient.gender ? patient.gender : "N/A"}
-        </Typography>
+      <Grid container md={12}>
+        <Box sx={{ ml: 6, width: "100%", height: 200 }}>
+          <Grid md={10}>
+            <Typography
+              sx={{ fontWeight: "bold" }}
+              variant="subtitle1"
+              gutterBottom
+            >
+              Patient Information
+            </Typography>
+
+            <SearchItem cardData={location.state} />
+          </Grid>
+        </Box>
       </Grid>
     </>
   );

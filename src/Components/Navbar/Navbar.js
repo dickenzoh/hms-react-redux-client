@@ -9,7 +9,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   return (
-    <AppBar style={{ background: "#2E3B55" }} position="static" fullWidth>
+    <AppBar
+      style={{ background: "#2E3B55" }}
+      elevation={6}
+      position="static"
+      fullWidth
+    >
       <Toolbar>
         <IconButton
           size="large"

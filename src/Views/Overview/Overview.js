@@ -5,18 +5,19 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import ListView from "../../Components/ListView/ListView";
 import Searchbar from "../../Components/Searchbar/Searchbar";
+import Dgrid from "../../Components/ListView/Dgrid";
 
-const Patients = () => {
+const Home = () => {
   const classes = useStyles();
 
   return (
     <>
       <Navbar />
-      <Grid container className={classes.mainContainer}>
-        <Grid md={2}>
+      <Grid container>
+        <Grid md={3} className={classes.mainContainer}>
           <Sidebar />
         </Grid>
-        <Grid md={9}>
+        <Grid md={8}>
           <Searchbar />
           <ListView />
         </Grid>
@@ -25,4 +26,4 @@ const Patients = () => {
   );
 };
 
-export default Patients;
+export default Home;

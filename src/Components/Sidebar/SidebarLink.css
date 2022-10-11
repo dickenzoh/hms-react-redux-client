@@ -7,7 +7,7 @@
     align-items: cover;
     cursor: pointer;
     border-radius: 30px;
-    text-decoration: none;
+    text-decoration: none !important;
   }
   /* a, a:hover, a:focus, a:active {
     text-decoration: none;
@@ -23,13 +23,15 @@
     background-color: #0fec0f;
     color: #0fec0f;
     transition: color 100ms ease-out;
-    text-decoration: none;
+    text-decoration: none!important;
   }
-  .link > h2{
+  .link > h4{
     font-weight: 700;
     font-size: 18px;
     margin-right: 10px;
     color: white;
+    text-decoration: none;
+
   }
   .link > .MuiSvgIcon-root {
     padding: 20px;
@@ -43,4 +45,6 @@
     color: white;
     font-weight: 700;
     text-transform: inherit;
+    text-decoration: none;
+
   }
